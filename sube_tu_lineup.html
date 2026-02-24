@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Lineup </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Mapas ▾</a>
+                <ul>
+                    <li><a href="abyss.html">Abyss</a></li>
+                    <li><a href="breeze.html">Breeze</a></li>
+                    <li><a href="corrode.html">Corrode</a></li>
+                    <li><a href="bind.html">Bind</a></li>
+                    <li><a href="heaven.html">Haven</a></li>
+                    <li><a href="pearl.html">Pearl</a></li>
+                    <li><a href="split.html">Split</a></li>
+                </ul>
+            </li>
+            <li><a href="sube_tu_lineup.html">Sube tu Lineup</a></li>
+            <li><a href="contactanos.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 class="animacion-extra">Sube tu line up !!!</h1>
+        
+        <div class="card">
+            <form action="#">
+                <label>Nombre del Lineup:</label>
+                <input type="text" placeholder="Ej: Doble dardo A Bind" required>
+                
+                <label>Tu Riot ID:</label>
+                <input type="text" placeholder="Migui#EUW" required>
+
+                <label>Mapa:</label>
+                <select>
+                    <option value="abyss">Abyss</option>
+                    <option value="breeze">Breeze</option>
+                    <option value="corrode">Corrode</option>
+                    <option value="bind">Bind</option>
+                    <option value="heaven">Haven</option>
+                    <option value="pearl">Pearl</option>
+                    <option value="split">Split</option>
+                </select>
+
+                <label>Instrucciones:</label>
+                <textarea rows="4" placeholder="Explica cómo apuntar..."></textarea>
+
+                <p>Dificultad:</p>
+                <input type="radio" name="dif" value="1"> Fácil
+                <input type="radio" name="dif" value="2"> Media
+                <input type="radio" name="dif" value="3"> Dificil
+
+                <p>Categoría:</p>
+                <label for="c1">Recon</label> <input type="checkbox" id="c1"> 
+                <label for="c2">Shock Dart</label><input type="checkbox" id="c2"> 
+                <label for="c3">Post-plant</label><input type="checkbox" id="c3">
+
+                <br><br>
+                <button type="submit">Enviar Lineup</button>
+                <button type="reset" style="background-color: #555;">Borrar Todo</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>MIGUEL 2026 - Proyecto Final HTML </footer>
+</body>
+</html>

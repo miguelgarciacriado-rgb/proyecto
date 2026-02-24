@@ -1,0 +1,195 @@
+body {
+    background-color: #0f1923; 
+    color: white; 
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card {
+    background: #1a252e;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+nav {
+    background-color: #1f2326; /* Fondo menú (Gris) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ff4655; /* Borde rojo Valorant */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Disposición principal para PC */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Submenú desplegable (oculto por defecto) */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #1f2326; /* Fondo submenú (Gris) */
+    min-width: 180px;
+    border: 1px solid #ff4655; /* Borde rojo Valorant */
+}
+
+/* Activación del submenú mediante :hover */
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* Hover en los enlaces del menú */
+nav ul li a:hover {
+    background-color: #ff4655; /* Hover rojo Valorant */
+}
+label { 
+    display: block; 
+    margin-top: 10px; 
+    font-weight: bold; 
+    color: #ff4655; /* Texto rojo Valorant */
+}
+
+input[type="text"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #0f1923; /* Fondo inputs (Oscuro) */
+    border: 1px solid #333;
+    color: white;
+    box-sizing: border-box;
+}
+
+button {
+    background: #ff4655; /* Botón rojo Valorant */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button[type="reset"] { 
+    background: #444; 
+    margin-left: 10px; 
+}
+
+
+.slider-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    overflow: hidden; 
+    border: 4px solid #ff4655; /* Borde rojo Valorant */
+    border-radius: 8px;
+}
+
+.slider-track {
+    display: flex;
+    width: 700%; /* 100% por cada una de las 7 imágenes */
+    animation: carrusel-7-mapas 25s infinite linear; 
+}
+
+.slider-track img {
+    width: calc(100% / 7); 
+    height: 450px;
+    object-fit: cover;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 8px; /* Bordes redondeados para el vídeo */
+}
+
+
+/* Animación 1: Movimiento del Carrusel */
+@keyframes carrusel-7-mapas {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% + (100% / 7))); } 
+}
+
+/* Animación 2: Efecto Pulso (Títulos) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animacion-extra {
+    animation: pulse 3s infinite;
+    color: #ff4655; /* Texto rojo Valorant */
+    text-align: center;
+}
+@keyframes rotar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animacion-rotacion {
+    display: block;
+    margin: 70px auto; 
+    width: 200px; 
+    border: 2px solid #ff4655; /* Borde rojo Valorant */
+    animation: rotar 2s infinite linear; 
+}
+
+/* Disposición para PC - Máximo 1300px */
+@media (max-width: 1300px) {
+    .container { 
+        width: 90%; 
+    }
+}
+/* Disposición para Móvil - Máximo 600px */
+@media (max-width: 600px) {
+    nav ul { 
+        flex-direction: column; /* Menú vertical en móvil */
+    } 
+    
+    nav ul li ul { 
+        position: static; 
+        width: 100%; 
+        border: none; 
+    }
+    
+    .slider-container { 
+        width: 95%; 
+    }
+    
+    .slider-track img { 
+        height: 250px; 
+    }
+}

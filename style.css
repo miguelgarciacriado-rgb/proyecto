@@ -1,4 +1,63 @@
-ul {
+body {
+    background-color: #0f1923; 
+    color: white; 
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card {
+    background: #1a252e;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+nav {
+    background-color: #1f2326; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ff4655; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+nav ul li ul {
     display: none;
     position: absolute;
     background-color: #1f2326; 
@@ -48,7 +107,7 @@ button[type="reset"] {
     margin-left: 10px; 
 }
 
-/* --- SECCIÓN SLIDER EDITADA --- */
+/* --- SECCIÓN SLIDER CORREGIDA PARA QUE NO SE VEAN FRANJAS --- */
 
 .slider-container {
     width: 100%;
@@ -61,30 +120,31 @@ button[type="reset"] {
 
 .slider-track {
     display: flex;
-    width: 700%; /* 100% por cada una de las 7 imágenes */
+    /* 700% significa que el contenedor mide 7 veces el ancho del padre */
+    width: 700%; 
     animation: carrusel-7-mapas 25s infinite linear; 
 }
 
-/* Nuevo: Estilo para el enlace que envuelve la imagen */
 .slider-track a {
-    width: calc(100% / 7); 
+    /* Forzamos a que cada enlace ocupe exactamente 1/7 del carrusel */
+    flex: 0 0 calc(100% / 7); 
     display: block;
-    text-decoration: none;
+    height: 450px; /* Altura de la imagen */
 }
 
 .slider-track img {
-    width: 100%; /* Ahora la imagen ocupa el 100% de su enlace */
-    height: 450px;
-    object-fit: cover;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
     display: block;
 }
 
-/* Pausa el slider al pasar el ratón para facilitar el clic */
+/* Pausa la animación al pasar el ratón */
 .slider-track:hover {
     animation-play-state: paused;
 }
 
-/* --- FIN SECCIÓN EDITADA --- */
+/* --- FIN SECCIÓN CORREGIDA --- */
 
 iframe {
     max-width: 100%;
@@ -142,7 +202,8 @@ iframe {
         width: 95%; 
     }
     
-    .slider-track img { 
+    /* Ajuste de altura para móvil */
+    .slider-track a { 
         height: 250px; 
     }
 }
